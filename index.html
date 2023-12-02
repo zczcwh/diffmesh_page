@@ -385,11 +385,11 @@ pre {
 <script type="text/javascript" src="../js/hidebib.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
     <head>
-        <title> POTTER: Pooling Attention Transformer for Efficient Human Mesh Recovery</title>
+        <title> DiffMesh: A Motion-aware Diffusion-like Framework for Human Mesh Recovery from Videos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:description" content="POTTER: Pooling Attention Transformer for Efficient Human Mesh Recovery"/>
+        <meta property="og:description" content="DiffMesh: A Motion-aware Diffusion-like Framework for Human Mesh Recovery from Videos"/>
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-        <meta name="twitter:title" content="POTTER: Pooling Attention Transformer for Efficient Human Mesh Recovery">
+        <meta name="twitter:title" content="DiffMesh: A Motion-aware Diffusion-like Framework for Human Mesh Recovery from Videos">
         <meta name="twitter:description" content="">
         <meta name="twitter:image" content="">
     </head>
@@ -400,7 +400,7 @@ pre {
 <div class="container">
     <div class="paper-title">
     <h1> 
-        POTTER: Pooling Attention Transformer for Efficient Human Mesh Recovery
+        DiffMesh: A Motion-aware Diffusion-like Framework for Human Mesh Recovery from Videos
     </div>
 
     <div id="authors">
@@ -408,7 +408,8 @@ pre {
             <div class="author-row-new">
                 <a href="https://zczcwh.github.io/">Ce Zheng<sup>1</sup></a>,
                 <a href="https://xianpeng919.github.io/">Xianpeng Liu<sup>2</sup></a>,
-                <a href="http://maple-lab.net/gqi/">Guo-Jun Qi<sup>3,4</sup></a>,
+                <a href="https://tfwu.github.io/">Tianfu Wu<sup>2</sup></a>,
+                <a href="http://maple-lab.net/gqi/">Guo-Jun Qi<sup>4,5</sup></a>,
                 <a href="https://www.crcv.ucf.edu/chenchen/">Chen Chen<sup>1</sup></a>,
             </div>
         </center>
@@ -416,29 +417,30 @@ pre {
         <div class="affiliations">
             <span><sup>1</sup> Center for Research in Computer Vision, University of Central Florida </span><br/>
             <span><sup>2</sup> North Carolina State University </span><br/>
-            <span><sup>3</sup> OPPO Seattle Research Center, USA </span>
-            <span><sup>4</sup> Westlake University </span><br/>
+            <span><sup>3</sup> Key Laboratory of Machine Perception, Peking University, Shenzhen Graduate School </span><br/>
+            <span><sup>4</sup> OPPO Seattle Research Center, USA </span><br/>
+            <span><sup>5</sup> Westlake University </span><br/>
         </div>
 
 <!--         <br>*indicates equal contribution. -->
 
         <div class="affil-row">
-            <div class="venue text-center"><b> CVPR 2023 </b></div>
+            <div class="venue text-center"><b> arXiv 2023 </b></div>
         </div>
 
         </center>
 
         <div style="clear: both">
             <div class="paper-btn-parent">
-            <a class="paper-btn" href="https://arxiv.org/pdf/2303.13357.pdf">
+            <a class="paper-btn" href="">
                 <span class="material-icons"> description </span> 
                  Paper
             </a>
-            <a class="paper-btn" href="https://github.com/zczcwh/POTTER">
+            <a class="paper-btn" href="https://github.com/zczcwh/DiffMesh">
                 <span class="material-icons"> code </span>
                 Code
             </a>
-            <a class="paper-btn" href="https://www.youtube.com/watch?v=-O4V-yqJmms">
+            <a class="paper-btn" href="">
                 <span class="material-icons"> code </span>
                 Video
             </a>  
@@ -446,27 +448,15 @@ pre {
     </div>
 
     
-    <!-- <section id="teaser-image">
-        <center>
-            <figure>
-                <video class="centered" width="80%" autoplay loop muted playsinline class="video-background " >
-                    <source src="assets/LION_video_v10.mp4#t=0.001" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </figure>
-
-        </center>
-    </section>
-     -->
    
         
-    </section>
+<!--     </section>
     <section id="teaser-image">
         <hr>
             <div class="mx-auto">
                 <center><img class="card-img-top" src="materials/potter.gif" style="width:350px"></center>
             </div>
-        <hr>
+        <hr> -->
     
     
 
@@ -476,63 +466,25 @@ pre {
         <h2>Abstract</h2>
         <div class="flex-row">
             <p>
-                Transformer architectures have achieved SOTA performance on the human mesh recovery (HMR) from monocular images. However, the performance gain has come at the cost of substantial memory and computational overhead. 
-                A lightweight and efficient model to reconstruct accurate human mesh is needed for real-world applications. In this paper, we propose a pure transformer architecture named POoling aTtention TransformER (POTTER) for the HMR task from single images. 
-                Observing that the conventional attention module is memory and computationally expensive, we propose an efficient pooling attention module, which significantly reduces the memory and computational cost without sacrificing performance. 
-                Furthermore, we design a new transformer architecture by integrating a High-Resolution (HR) stream for the HMR task. The high-resolution local and global features from the HR stream can be utilized for recovering more accurate human mesh. 
-                Our POTTER outperforms the SOTA method METRO by only requiring 7% of total parameters and 14% of the Multiply-Accumulate Operations on the Human3.6M and 3DPW datasets.             </p>
+                Human mesh recovery (HMR) provides rich human body information for various real-world applications such as gaming, human-computer interaction, and virtual reality. 
+                While image-based HMR methods have achieved impressive results, they often struggle to recover humans in dynamic scenarios, leading to temporal inconsistencies and non-smooth 3D motion predictions due to the absence of human motion. 
+                In contrast, video-based approaches leverage temporal information to mitigate this issue. In this paper, we present DiffMesh, an innovative motion-aware Diffusion-like framework for video-based HMR. 
+                DiffMesh establishes a bridge between diffusion models and human motion, efficiently generating accurate and smooth output mesh sequences by incorporating human motion within the forward process and reverse process in the diffusion model. 
+                Extensive experiments are conducted on the widely used datasets, which demonstrate the effectiveness and efficiency of our DiffMesh. Visual comparisons in real-world scenarios further highlight DiffMesh's suitability for practical applications.            </p>
         </div>
     </section>
     <section id="method"/>
         <hr>
-        <h2>POTTER</h2>
+        <h2>DiffMesh</h2>
 
             <br><br>
 
             <div class="mx-auto">
-<!--                <left><p>The proposed framework that composes a "generator" and an ensemble of "scorers" through iterative consensus enables zero-shot generalization across a variety of multimodal tasks.</p></left>-->
-                <center><img class="card-img-top" src="materials/framework_compare.jpg" style="width:950px"></center>
-            </div>
 
-            <br><br><br>
-
-            <!-- <div class="row">
-                    <div class="column4">
-                        <center><img class="card-img-top" src="materials/framework.png" style="width:400px"></center>
-                    </div>
-
-                    <div class="column4">
-                        <video width="400" loop autoplay muted>
-                            <source src="materials/teaser3.mp4" type="video/mp4">
-                        </video>
-                    </div>
-            </div>
- -->
-<!--            <div class="flex-row">-->
-<!--                <div class="mx-auto">-->
-<!--                    <left><p><b>Overview of the proposed unified framework.</b> Dashed lines are omitted for certain tasks. Orange lines represent the components used to refine the generated result.</p></left>-->
-<!--                    <br>-->
-<!--                    <center><img class="card-img-top" src="materials/framework.png" style="width:400px"></center>-->
-
-<!--                    <br><br>-->
-
-<!--                    &lt;!&ndash; <video width="800" loop autoplay muted style="border:1px solid black"> &ndash;&gt;-->
-<!--                    <video width="850" loop autoplay muted controls>-->
-<!--                        <source src="materials/new3-2.mp4" type="video/mp4">-->
-<!--                    </video>-->
-<!--                </div>-->
-
-<!--                <br><br>-->
-<!--                <p><b>Image generation: </b> A pre-trained diffusion model is used as the generator, and multiple scorers, such as CLIP and image classifiers, are used to provide feedback to the generator.</p>-->
-<!--                <p><b>Video question answering: </b> GPT-2 is used as the generator, and a set of CLIP models are used as scorers.</p>-->
-<!--                <p><b>Grade school math: </b> GPT-2 is used as the generator, and a set of question-solution classifiers are used as scorers.</p>-->
-<!--                <p><b>Robot manipulation: </b> MPC+World model is used as the generator, and a pre-trained image segmentation model is used to compute the scores from multiple camera views to select the best action.</p>-->
-
-<!--            </div>-->
     </section>
         
 
-    <section id="results">
+<!--     <section id="results">
         <hr>
         <h2>Results of image classification task </h2>
             <br><br>
@@ -575,9 +527,9 @@ pre {
         <h2> Video </h2>
     <div class="video-container">
         <iframe width="896" height="504" src="https://www.youtube.com/embed/-O4V-yqJmms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div></br>    
+    </div></br>     -->
    
-    <section id="paper">
+<!--     <section id="paper">
         <h2>Bibtex</h2>
         <div class="page-body"><pre id="ad6975be-3353-467d-ae48-6313d767ffa6" class="code"><code>
             @InProceedings{zheng2023potter,
@@ -589,7 +541,7 @@ pre {
         </code></pre><p id="1a3aa306-c4b8-4872-8fb0-411495c73d55" class="">
         </p></div>
 
-    </section>
+    </section> -->
 
 
     <section>
