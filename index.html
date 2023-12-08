@@ -432,7 +432,7 @@ pre {
 
         <div style="clear: both">
             <div class="paper-btn-parent">
-            <a class="paper-btn" href="">
+            <a class="paper-btn" href="https://arxiv.org/pdf/2303.13397.pdf">
                 <span class="material-icons"> description </span> 
                  Paper
             </a>
@@ -472,37 +472,47 @@ pre {
                 DiffMesh establishes a bridge between diffusion models and human motion, efficiently generating accurate and smooth output mesh sequences by incorporating human motion within the forward process and reverse process in the diffusion model. 
                 Extensive experiments are conducted on the widely used datasets, which demonstrate the effectiveness and efficiency of our DiffMesh. Visual comparisons in real-world scenarios further highlight DiffMesh's suitability for practical applications.            </p>
         </div>
+        
     </section>
-    <section id="method"/>
+    <section id="Framework"/>
         <hr>
-        <h2>DiffMesh</h2>
-
+        <h2> Compared with the general pipeline for diffusion models. </h2>
             <br><br>
-
             <div class="mx-auto">
-
+                <center><img class="card-img-top" src="materials/dm_TID.jpg" style="width:950px"></center>
+                <p> (a) The general pipeline for diffusion model. Input data is perturbed by adding noise recursively and output data is generated from the noise in the reverse process. 
+                    (b) Human motion is involved over time in the input video sequence. Similar to the forward process in (a), the forward motion between adjacent frames resembles the process of adding noise. 
+                    The mesh of the previous frame can be decoded through the reverse motion process successively.</p>
+            </div>
+        <hr>
+        
+        <h2>Architecture of DiffMesh</h2>
+            <br><br>
+            <div class="mx-auto">
+                <center><img class="card-img-top" src="materials/arch.jpg" style="width:950px"></center>
+                <p> Our framework takes input sequence with $f$ frames, with the objective of outputting a human mesh sequence consisting of f frames. 
+                    We model the forward human motion across frames similar to the mechanism of introducing noise in the forward process. 
+                    We assume that human motion will eventually reach a static state, which is represented by the mesh template state $x_{end}$. 
+                    Thus, additional (N - f + 1) steps are necessary from $x_f$ to reach the static state $x_{end}$. 
+                    Consequently, we utilize a transformer-based diffusion model to sequentially produce the decoded features during the reverse process. 
+                    The final human mesh sequence is returned by a mesh head using SMPL human body model. </p>
+            </div>
+        <hr>
+        
     </section>
         
 
-<!--     <section id="results">
+    <section id="results">
         <hr>
-        <h2>Results of image classification task </h2>
+        <h2>Results on Human3.6M and 3DPW datasets </h2>
             <br><br>
             <div class="mx-auto">
-                <center><img class="card-img-top" src="materials/table_img.jpg" style="width:950px"></center>
+                <center><img class="card-img-top" src="materials/table1.jpg" style="width:950px"></center>
             </div>
         <hr>
 
-        <h2>Results of human mesh recovery</h2>
-            <br><br>
-            <div class="mx-auto">
-                <center><img class="card-img-top" src="materials/table_hmr.jpg" style="width:950px"></center>
-                 <br><br>
-                <center><img class="card-img-top" src="materials/MG_PA.jpg" style="width:550px"></center>
-            </div>
-        <hr>
 
-        <h2>Mesh visualization</h2>
+<!--         <h2>Mesh visualization</h2>
             <br><br>
             <div class="mx-auto">
                 <center><p><b>Frame-by-frame reconstruction for the video input</b></p></center>
@@ -519,29 +529,29 @@ pre {
                 <center><img class="card-img-top" src="materials/supp_vis_hand.jpg" style="width:100%"></center>
             </div>
             <br><br><br>
-        <hr>
+        <hr> -->
 
     </section>
 
-    <section id="paper">
+<!--     <section id="paper">
         <h2> Video </h2>
     <div class="video-container">
         <iframe width="896" height="504" src="https://www.youtube.com/embed/-O4V-yqJmms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div></br>     -->
    
-<!--     <section id="paper">
+    <section id="paper">
         <h2>Bibtex</h2>
         <div class="page-body"><pre id="ad6975be-3353-467d-ae48-6313d767ffa6" class="code"><code>
-            @InProceedings{zheng2023potter,
-                title={POTTER: Pooling Attention Transformer for Efficient Human Mesh Recovery},
-                author={Zheng, Ce and Liu, Xianpeng and Qi, Guo-Jun and Chen, Chen},
-                booktitle ={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-                year={2023}
+            @article{zheng2023diffmesh,
+              title={DiffMesh: A Motion-aware Diffusion-like Framework for Human Mesh Recovery from Videos},
+              author={Zheng, Ce and Liu, Xianpeng and Liu, Mengyuan and Wu, Tianfu and Qi, Guo-Jun and Chen, Chen},
+              journal={arXiv preprint arXiv:2303.13397},
+              year={2023}
             }
         </code></pre><p id="1a3aa306-c4b8-4872-8fb0-411495c73d55" class="">
         </p></div>
 
-    </section> -->
+    </section>
 
 
     <section>
