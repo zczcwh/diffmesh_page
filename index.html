@@ -476,7 +476,7 @@ pre {
     </section>
     <section id="Framework"/>
         <hr>
-        <h2> Compared with the general pipeline for diffusion models. </h2>
+        <h2> Framework </h2>
             <br><br>
             <div class="mx-auto">
                 <center><img class="card-img-top" src="materials/dm_TID.jpg" style="width:950px"></center>
@@ -492,8 +492,8 @@ pre {
                 <center><img class="card-img-top" src="materials/arch.jpg" style="width:950px"></center>
                 <p> Our framework takes input sequence with $f$ frames, with the objective of outputting a human mesh sequence consisting of f frames. 
                     We model the forward human motion across frames similar to the mechanism of introducing noise in the forward process. 
-                    We assume that human motion will eventually reach a static state, which is represented by the mesh template state $x_{end}$. 
-                    Thus, additional (N - f + 1) steps are necessary from $x_f$ to reach the static state $x_{end}$. 
+                    We assume that human motion will eventually reach a static state, which is represented by the mesh template state `$x_{end}$`. 
+                    Thus, additional (N - f + 1) steps are necessary from `$x_f$` to reach the static state `$x_{end}$`. 
                     Consequently, we utilize a transformer-based diffusion model to sequentially produce the decoded features during the reverse process. 
                     The final human mesh sequence is returned by a mesh head using SMPL human body model. </p>
             </div>
@@ -505,13 +505,41 @@ pre {
     <section id="results">
         <hr>
         <h2>Results on Human3.6M and 3DPW datasets </h2>
-            <br><br>
+            <br>
             <div class="mx-auto">
                 <center><img class="card-img-top" src="materials/table1.jpg" style="width:950px"></center>
             </div>
         <hr>
 
-
+    <section id="visualization">
+        <hr>
+        <h2>Visual Comparisons with previous methods </h2>
+            <br>
+            <div class="mx-auto">
+                <center><img class="card-img-top" src="materials/box.gif" style="width:950px"></center>
+            </div>
+            <br>
+            <div class="mx-auto">
+                <center><img class="card-img-top" src="materials/wave.gif" style="width:950px"></center>
+            </div>
+            <br>
+            <div class="mx-auto">
+                <center><img class="card-img-top" src="materials/orange.gif" style="width:950px"></center>
+            </div>
+            <br>
+            <div class="mx-auto">
+                <center><img class="card-img-top" src="materials/stand.gif" style="width:950px"></center>
+            </div>
+            <br>
+            <div class="mx-auto">
+                <center><img class="card-img-top" src="materials/red.gif" style="width:950px"></center>
+            </div>
+            <br>
+            <div class="mx-auto">
+                <center><img class="card-img-top" src="materials/basket.gif" style="width:950px"></center>
+            </div>
+        <hr>
+        
 <!--         <h2>Mesh visualization</h2>
             <br><br>
             <div class="mx-auto">
